@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Edit Show</title>
+</head>
+<body>
+    <div class="header_box">
+        <h1>Edit Show</h1>
+        <div class="header_links">
+            <a href="/dashboard">TV Shows</a>
+            <a href="/logout">logout</a>
+        </div>
+    </div>
+    {% with messages = get_flashed_messages(category_filter=['ride']) %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="update_form">
+        <form action="/edit_show/{{show.id}}" method="POST">
+            <div id="create_form">
+                <input type="hidden" name="id" value="{{show.id}}">
+                <input type="hidden" name="posted_by" value="{{show.posted_by}}">
+                <div>
+                    <label for="title">Title: </label>
+                    <input type="text" name="title" value="{{show.title}}">
+                </div>
+                <div class="space"></div>
+                <div>
+                    <label for="network">Network: </label>
+                    <input type="text" name="network" value="{{show.network}}">
+                </div>
+                <div class="space"></div>
+                <div>
+                    <label for="release_date">Release Date: </label>
+                    <input type="date" name="release_date" value="{{show.release_date.date()}}">
+                </div>
+                <div class="space"></div>
+                <div>
+                    <label for="description">Description:</label>
+                    <textarea name="description" id="" cols="50" rows="10" name="description" value="{{show.description}}">{{show.description}}</textarea>
+                </div>
+                <div class="space"></div>
+                <input type="submit" value="Update Show">
+            </div>
+        </form> 
+
+
+    </div>
+</body>
+</html>

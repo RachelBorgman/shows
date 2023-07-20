@@ -1,0 +1,65 @@
+.header_box{
+    display: flex;
+    justify-content: space-between;
+}
+.header_links{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+#container{
+    display: flex;
+    margin: 30px;
+    justify-content: space-around;
+}
+h2{
+    font-size: 2.8em;
+    margin-bottom:20px;
+}
+#register_box{
+    background-color: black;
+    color: white;
+    height: 550px;
+    width: 35%;
+    text-align: center;
+}
+#login_box{
+    background-color: blue;
+    color: white;
+    height: 550px;
+    width: 35%;
+    text-align: center;
+}
+.space{
+    height: 20px;
+}
+label{
+    font-size: 1.5em;
+}
+.flash{
+    color:red;
+    font-size: 1.2em;
+    margin:0;
+}
+.create_form{
+    display: flex;
+    justify-content: space-around;
+}
+.second_header{
+    display: flex;
+    justify-content: space-around;
+}
+.desc{
+    display: flex;
+    justify-content: space-around;
+}
+.container_header{
+    display: flex;
+    justify-content: space-between;
+}
+#view_main_container{
+    border: 2px solid black;
+    padding: 20px;
+    margin:auto;
+    width: 80%;
+}
